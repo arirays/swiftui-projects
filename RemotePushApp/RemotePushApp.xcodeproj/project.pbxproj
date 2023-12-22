@@ -12,6 +12,7 @@
 		0B3D6FB82B1BD9E0004F2FEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D6FB72B1BD9E0004F2FEB /* Assets.xcassets */; };
 		0B3D6FBB2B1BD9E0004F2FEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D6FBA2B1BD9E0004F2FEB /* Preview Assets.xcassets */; };
 		0B3D6FC22B1BDB6D004F2FEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D6FC12B1BDB6D004F2FEB /* AppDelegate.swift */; };
+		0B3D707D2B33DA2B004F2FEB /* NotificationTimeBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D707C2B33DA2B004F2FEB /* NotificationTimeBased.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		0B3D6FB72B1BD9E0004F2FEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B3D6FBA2B1BD9E0004F2FEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B3D6FC12B1BDB6D004F2FEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B3D707C2B33DA2B004F2FEB /* NotificationTimeBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimeBased.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				0B3D6FC12B1BDB6D004F2FEB /* AppDelegate.swift */,
 				0B3D6FB72B1BD9E0004F2FEB /* Assets.xcassets */,
 				0B3D6FB92B1BD9E0004F2FEB /* Preview Content */,
+				0B3D707C2B33DA2B004F2FEB /* NotificationTimeBased.swift */,
 			);
 			path = RemotePushApp;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				0B3D6FC22B1BDB6D004F2FEB /* AppDelegate.swift in Sources */,
 				0B3D6FB62B1BD9DF004F2FEB /* ContentView.swift in Sources */,
 				0B3D6FB42B1BD9DF004F2FEB /* RemotePushAppApp.swift in Sources */,
+				0B3D707D2B33DA2B004F2FEB /* NotificationTimeBased.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
