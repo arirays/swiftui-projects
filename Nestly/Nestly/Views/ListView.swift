@@ -9,31 +9,38 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
+    
     var body: some View {
-        List {
-            Section {
-                ForEach(listViewModel.items) { item in
-                    ListRowView(item: item)
-                        .onTapGesture {
-                            withAnimation(.linear) {
-                                listViewModel.updateItem(item: item)
-                            }
+        ZStack {
+            if listViewModel.items.isEmpty {
+                Text("No items")
+            } else {
+                List {
+                    Section {
+                        ForEach(listViewModel.items) { item in
+                            ListRowView(item: item)
+                                .onTapGesture {
+                                    withAnimation(.linear) {
+                                        listViewModel.updateItem(item: item)
+                                    }
+                                }
                         }
+                        .onDelete(perform: listViewModel.deleteItem)
+                        .onMove(perform: listViewModel.moveItem)
+                    }
                 }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
+                .listStyle(PlainListStyle())
             }
         }
-        .listStyle(PlainListStyle())
-        .navigationTitle("ToDo List")
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton()
-            }
-            
-            ToolbarItem(placement: .topBarTrailing, content: {
-                NavigationLink("Add", destination: AddView())
-            })
+            .navigationTitle("ToDo List")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .topBarTrailing, content: {
+                    NavigationLink("Add", destination: AddView())
+                })
         }
     }
     
