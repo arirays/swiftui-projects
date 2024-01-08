@@ -9,12 +9,12 @@ import SwiftUI
 
 
 struct MenuItemsView: View {
-    @StateObject var viewModel = MenuViewModel()
     
-    var foodArray: [String] = ["Food1", "Food2", "Food3", "Food4", "Food5", "Food6", "Food7", "Food8", "Food9", "Food10", "Food11", "Food12" ]
-    var drinkArray = ["Drink1", "Drink2", "Drink3", "Drink4", "Drink5", "Drink6", "Drink7","Drink8"]
-    var dessertArray = ["Dessert1", "Dessert2", "Dessert3", "Dessert4"]
-    
+    @StateObject var menuViewModel = MenuViewModel(
+        foodMenuItems: MenuItem.testFoodMenuItems,
+        drinkMenuItems: MenuItem.testMenuItemsDrink,
+        dessertMenuItems: MenuItem.testMenuItemsDessert)
+
     let columns: [GridItem] = [
         GridItem(.flexible(),
                  spacing: nil,
@@ -33,40 +33,49 @@ struct MenuItemsView: View {
                 LazyVGrid(columns: columns) {
                     Section(header:
                             Text("Food")
-                        .font(.title2)
+                        .font(.title2.bold())
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
-                        ForEach(foodArray, id: \.self) { food in
-                            NavigationLink(value: food) {
-                                FoodItemTitleView(name: "\(food)", imageName: "fork.knife.circle")
+                        ForEach(menuViewModel.foodMenuItems) { item in
+                            NavigationLink {
+                                MenuItemDetailsView()
+                            } label: {
+                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
                             }
+
                         }
                     }
                     
                     Section(header:
                             Text("Drinks")
-                        .font(.title2)
+                        .font(.title2.bold())
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
-                        ForEach(drinkArray, id: \.self) { drink in
-                            NavigationLink(value: drink) {
-                                FoodItemTitleView(name: "\(drink)", imageName: "fork.knife.circle")
+                        ForEach(menuViewModel.drinkMenuItems) { item in
+                            NavigationLink {
+                                MenuItemDetailsView()
+                            } label: {
+                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
                             }
+
                         }
                     }
                     
                     Section(header:
                             Text("Desserts")
-                        .font(.title2)
+                        .font(.title2.bold())
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
-                        ForEach(dessertArray, id: \.self) { dessert in
-                            NavigationLink(value: dessert) {
-                                FoodItemTitleView(name: "\(dessert)", imageName: "fork.knife.circle")
+                        ForEach(menuViewModel.dessertMenuItems) { item in
+                            NavigationLink {
+                                MenuItemDetailsView()
+                            } label: {
+                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
                             }
+
                         }
                     }
                 }
@@ -92,8 +101,8 @@ struct MenuItemsView: View {
     }
 }
 
-struct FoodItemTitleView: View {
-    let name: String
+struct ItemTitleView: View {
+    let title: String
     let imageName: String
     
     var body: some View {
@@ -101,7 +110,7 @@ struct FoodItemTitleView: View {
             Image(systemName: "fork.knife.circle")
                 .resizable()
                 .frame(width: 90, height: 90)
-            Text(name)
+            Text(title)
                 .font(.title3)
                 .fontWeight(.semibold)
                 .scaledToFit()

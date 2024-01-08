@@ -9,8 +9,15 @@ import Foundation
 import SwiftUI
 
 class MenuViewModel: ObservableObject {
-    @Published var foodMenuItems: [MenuItem] = [] // food menu items
-    @Published var drinkMenuItems: [MenuItem] = []
-    @Published var dessertMenuItems: [MenuItem] = []
+//    @Published var items = MenuItem.testMenuItems
     
+    @Published var foodMenuItems: [MenuItem] = MenuItem.testFoodMenuItems
+    @Published var drinkMenuItems: [MenuItem] = MenuItem.testMenuItemsDrink
+    @Published var dessertMenuItems: [MenuItem] = MenuItem.testMenuItemsDessert
+    
+    init(foodMenuItems: [MenuItem], drinkMenuItems: [MenuItem], dessertMenuItems: [MenuItem]) {
+        self.foodMenuItems = foodMenuItems
+        self.drinkMenuItems = drinkMenuItems
+        self.dessertMenuItems = dessertMenuItems
+    }
 }

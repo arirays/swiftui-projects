@@ -11,10 +11,15 @@ struct MenuItem: Identifiable, Hashable {
     var id = UUID()
     let title: String
     let ingredients: [Ingredient]
+    
+    init(title: String, ingredients: [Ingredient]) {
+        self.title = title
+        self.ingredients = ingredients
+    }
 }
 
-struct MockData {
-    static let menuItemsFood = [
+extension MenuItem {
+    static let testFoodMenuItems: [MenuItem] = [
         MenuItem(title: "Food1", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Food2", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Food3", ingredients: [Ingredient.broccoli]),
@@ -29,7 +34,7 @@ struct MockData {
         MenuItem(title: "Food12", ingredients: [Ingredient.broccoli])
     ]
     
-    static let menuItemsDrink = [
+    static let testMenuItemsDrink = [
         MenuItem(title: "Drink1", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Drink2", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Drink3", ingredients: [Ingredient.broccoli]),
@@ -40,7 +45,7 @@ struct MockData {
         MenuItem(title: "Drink8", ingredients: [Ingredient.broccoli])
     ]
     
-    static let menuItemsDessert = [
+    static let testMenuItemsDessert = [
         MenuItem(title: "Dessert1", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Dessert2", ingredients: [Ingredient.broccoli]),
         MenuItem(title: "Dessert3", ingredients: [Ingredient.broccoli]),
