@@ -14,7 +14,10 @@ struct MenuItemsView: View {
         foodMenuItems: MenuItem.testFoodMenuItems,
         drinkMenuItems: MenuItem.testMenuItemsDrink,
         dessertMenuItems: MenuItem.testMenuItemsDessert)
-
+    
+    @State var isPresenting = false
+    
+    
     let columns: [GridItem] = [
         GridItem(.flexible(),
                  spacing: nil,
@@ -43,7 +46,6 @@ struct MenuItemsView: View {
                             } label: {
                                 ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
                             }
-
                         }
                     }
                     
@@ -82,13 +84,24 @@ struct MenuItemsView: View {
                 .toolbar(content: {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            MenuItemsOptionView()
+                            isPresenting = true
                         } label: {
                             Label("Settings", systemImage: "slider.horizontal.3").foregroundColor(.blue)
                         }
 
+//                        NavigationLink {
+//                            MenuItemsOptionView()
+//                        } label: {
+//                            Label("Settings", systemImage: "slider.horizontal.3").foregroundColor(.blue)
+//                        }
+
                     }
                 })
+                .sheet(isPresented: $isPresenting) {
+                    NavigationStack {
+                        MenuItemsOptionView()
+                    }
+                }
             }
             .navigationTitle("Menu")
             .navigationDestination(for: String.self) { value in
@@ -115,7 +128,7 @@ struct ItemTitleView: View {
                 .fontWeight(.semibold)
                 .scaledToFit()
         }
-        .padding()
+//        .padding()
     }
 }
 
