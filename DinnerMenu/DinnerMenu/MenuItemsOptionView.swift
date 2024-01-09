@@ -8,25 +8,39 @@
 import SwiftUI
 
 struct MenuItemsOptionView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Selected Categories") {
-                    List {
-                        Text("\(Category.food.rawValue)")
-                        Text("\(Category.drink.rawValue)")
-                        Text("\(Category.dessert.rawValue)")
+            ZStack {
+                Form {
+                    Section("Selected Categories") {
+                        List {
+                            Text("\(Category.food.rawValue)")
+                            Text("\(Category.drink.rawValue)")
+                            Text("\(Category.dessert.rawValue)")
+                        }
+                    }
+                    Section("Sort By") {
+                        List {
+                            Text("\(Sorted.popular.rawValue)")
+                            Text("\(Sorted.price.rawValue)")
+                            Text("\(Sorted.alphabet.rawValue)")
+                        }
                     }
                 }
-                Section("Sort By") {
-                    List {
-                        Text("\(Sorted.popular.rawValue)")
-                        Text("\(Sorted.price.rawValue)")
-                        Text("\(Sorted.alphabet.rawValue)")
-                    }
-                }
+                .navigationTitle("Filter")
             }
-            .navigationTitle("Filter")
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Done").foregroundColor(.blue)
+                    }
+                }
+            })
         }
     }
 }

@@ -36,7 +36,7 @@ struct MenuItemsView: View {
                 LazyVGrid(columns: columns) {
                     Section(header:
                             Text("Food")
-                        .font(.title2.bold())
+                        .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
@@ -51,7 +51,7 @@ struct MenuItemsView: View {
                     
                     Section(header:
                             Text("Drinks")
-                        .font(.title2.bold())
+                        .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
@@ -67,7 +67,7 @@ struct MenuItemsView: View {
                     
                     Section(header:
                             Text("Desserts")
-                        .font(.title2.bold())
+                        .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
@@ -88,13 +88,11 @@ struct MenuItemsView: View {
                         } label: {
                             Label("Settings", systemImage: "slider.horizontal.3").foregroundColor(.blue)
                         }
-
 //                        NavigationLink {
 //                            MenuItemsOptionView()
 //                        } label: {
 //                            Label("Settings", systemImage: "slider.horizontal.3").foregroundColor(.blue)
 //                        }
-
                     }
                 })
                 .sheet(isPresented: $isPresenting) {
