@@ -15,21 +15,38 @@ struct ListView: View {
             if listViewModel.items.isEmpty {
                 NoItemsView()
             } else {
-                List {
-                    Section {
-                        ForEach(listViewModel.items) { item in
-                            ListRowView(item: item)
-                                .onTapGesture {
-                                    withAnimation(.linear) {
-                                        listViewModel.updateItem(item: item)
+                    List {
+                        Section(content: {
+                            ForEach(listViewModel.items) { item in
+                                ListRowView(item: item)
+                                    .onTapGesture {
+                                        withAnimation(.linear) {
+                                            listViewModel.updateItem(item: item)
+                                        }
                                     }
-                                }
-                        }
-                        .onDelete(perform: listViewModel.deleteItem)
-                        .onMove(perform: listViewModel.moveItem)
+                            }
+                            .onDelete(perform: listViewModel.deleteItem)
+                            .onMove(perform: listViewModel.moveItem)
+                        }, header: {
+                            Text("Important tasks")
+                        })
+                        
+                        Section(content: {
+                            ForEach(listViewModel.items) { item in
+                                ListRowView(item: item)
+                                    .onTapGesture {
+                                        withAnimation(.linear) {
+                                            listViewModel.updateItem(item: item)
+                                        }
+                                    }
+                            }
+                            .onDelete(perform: listViewModel.deleteItem)
+                            .onMove(perform: listViewModel.moveItem)
+                        }, header: {
+                            Text("Baby items")
+                        })
                     }
-                }
-                .listStyle(PlainListStyle())
+                    .listStyle(PlainListStyle())
             }
         }
             .navigationTitle("ToDo List")
