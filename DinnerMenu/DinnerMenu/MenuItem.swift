@@ -7,58 +7,63 @@
 
 import Foundation
 
-struct MenuItem: Identifiable, Hashable {
+struct MenuItem: Identifiable, Hashable, MenuItemProtocol {
     var id = UUID()
-    let title: String
-    let ingredients: [Ingredient]
+    var title: String
+    var price: Double
+    var category: MenuCategory
+    var orderCount: Int
+    var ingredient: [Ingredient]
     
-    init(title: String, ingredients: [Ingredient]) {
+    init(title: String, price: Double, category: MenuCategory, orderCount: Int, ingredient: [Ingredient]) {
         self.title = title
-        self.ingredients = ingredients
+        self.price = price
+        self.category = category
+        self.orderCount = orderCount
+        self.ingredient = ingredient
     }
 }
 
 extension MenuItem {
     static let testFoodMenuItems: [MenuItem] = [
-        MenuItem(title: "Food1", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food2", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food3", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food4", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food5", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food6", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food7", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food8", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food9", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food10", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food11", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Food12", ingredients: [Ingredient.broccoli])
+        MenuItem(title: "Food1", price: 10.0, category: .Food, orderCount: 1000, ingredient: [.broccoli, .carrot, .pasta]),
+        MenuItem(title: "Food2", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food3", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food4", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food5", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food6", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food7", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food8", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food9", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food10", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food11", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Food12", price: 10.0, category: .Food, orderCount: 1000, ingredient: [])
     ]
     
     static let testMenuItemsDrink = [
-        MenuItem(title: "Drink1", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink2", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink3", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink4", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink5", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink6", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink7", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Drink8", ingredients: [Ingredient.broccoli])
+        MenuItem(title: "Drink1", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink2", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink3", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink4", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink5", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink6", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink7", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Drink8", price: 10.0, category: .Food, orderCount: 1000, ingredient: [])
     ]
     
     static let testMenuItemsDessert = [
-        MenuItem(title: "Dessert1", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Dessert2", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Dessert3", ingredients: [Ingredient.broccoli]),
-        MenuItem(title: "Dessert4", ingredients: [Ingredient.broccoli])
+        MenuItem(title: "Dessert1", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Dessert2", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Dessert3", price: 10.0, category: .Food, orderCount: 1000, ingredient: []),
+        MenuItem(title: "Dessert4", price: 10.0, category: .Food, orderCount: 1000, ingredient: [])
     ]
 }
 
-protocol MenuItems {
+protocol MenuItemProtocol {
     var id: UUID { get }
     var price: Double { get }
     var title: String { get }
     var category: MenuCategory { get }
     var orderCount: Int { get set }
-    var pricing: Int {get set}
     var ingredient: [Ingredient] { get set }
 }

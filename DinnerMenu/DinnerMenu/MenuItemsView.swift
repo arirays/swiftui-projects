@@ -44,7 +44,7 @@ struct MenuItemsView: View {
                             NavigationLink {
                                 MenuItemDetailsView()
                             } label: {
-                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
+                                ItemTitleView(title: "\(item.title)")
                             }
                         }
                     }
@@ -59,7 +59,7 @@ struct MenuItemsView: View {
                             NavigationLink {
                                 MenuItemDetailsView()
                             } label: {
-                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
+                                ItemTitleView(title: "\(item.title)")
                             }
 
                         }
@@ -75,7 +75,7 @@ struct MenuItemsView: View {
                             NavigationLink {
                                 MenuItemDetailsView()
                             } label: {
-                                ItemTitleView(title: "\(item.title)", imageName: "fork.knife.circle")
+                                ItemTitleView(title: "\(item.title)")
                             }
 
                         }
@@ -114,19 +114,22 @@ struct MenuItemsView: View {
 
 struct ItemTitleView: View {
     let title: String
-    let imageName: String
+//    let imageName: String
     
     var body: some View {
         VStack {
-            Image(systemName: "fork.knife.circle")
-                .resizable()
-                .frame(width: 90, height: 90)
+            Rectangle()
+                .frame(height: 100)
+                .foregroundStyle(.black)
+//            Image(systemName: "fork.knife.circle")
+//                .resizable()
+//                .frame(width: 90, height: 90)
             Text(title)
                 .font(.title3)
                 .fontWeight(.semibold)
                 .scaledToFit()
+                .foregroundStyle(.black)
         }
-//        .padding()
     }
 }
 
