@@ -2,24 +2,32 @@
 //  MenuCategory.swift
 //  DinnerMenu
 //
-//  Created by AS on 1/5/24.
-//
+
 
 import Foundation
 
 enum MenuCategory: String {
-    case Food
-    case Drink
-    case Dessert
+    case food
+    case drink
+    case dessert
     
     var category: String {
         switch self {
-        case .Food:
+        case .food:
             return "Food"
-        case .Drink:
+        case .drink:
             return "Drink"
-        case .Dessert:
+        case .dessert:
             return "Dessert"
         }
     }
 }
+
+/*
+ enum MenuCategory: String {
+    case food, drink, dessert
+ }
+ 
+ 
+ 
+ */

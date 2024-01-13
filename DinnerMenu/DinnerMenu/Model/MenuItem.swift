@@ -2,26 +2,41 @@
 //  MenuItem.swift
 //  DinnerMenu
 //
-//  Created by AS on 1/5/24.
-//
+
 
 import Foundation
 
-struct MenuItem: Identifiable, Hashable, MenuItemProtocol {
-    var id = UUID()
+
+protocol MenuItemProtocol {
+    var id: UUID { get }
+    var price: Double { get }
+    var title: String { get }
+    var category: MenuCategory { get }
+    var orderCount: Int { get set }
+    var ingredients: [Ingredient] { get set }
+}
+
+struct MenuItem: Identifiable, MenuItemProtocol {
+    let id = UUID()
     var title: String
     var price: Double
     var category: MenuCategory
     var orderCount: Int
-    var ingredient: [Ingredient]
+    var ingredients: [Ingredient]
     
-    init(title: String, price: Double, category: MenuCategory, orderCount: Int, ingredient: [Ingredient]) {
+    init(title: String, price: Double, category: MenuCategory, orderCount: Int, ingredients: [Ingredient]) {
         self.title = title
         self.price = price
         self.category = category
         self.orderCount = orderCount
-        self.ingredient = ingredient
+        self.ingredients = ingredients
     }
+   /*
+    var displayPrice: String {
+    String(round:(price / 0.01) * 0.01
+    }
+    */
+    
 }
 
 extension MenuItem {
@@ -59,11 +74,4 @@ extension MenuItem {
     ]
 }
 
-protocol MenuItemProtocol {
-    var id: UUID { get }
-    var price: Double { get }
-    var title: String { get }
-    var category: MenuCategory { get }
-    var orderCount: Int { get set }
-    var ingredient: [Ingredient] { get set }
-}
+

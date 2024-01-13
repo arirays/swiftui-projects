@@ -2,8 +2,6 @@
 //  Ingredient.swift
 //  DinnerMenu
 //
-//  Created by AS on 1/5/24.
-//
 
 import Foundation
 
@@ -29,3 +27,13 @@ enum Ingredient: String {
         }
     }
 }
+
+
+/* or Soultion
+ enum Ingredient: String, CaseIterable {
+    case spinach
+    case broccoli
+    case carrot
+    case pasta
+    case tomatoSauce
+ */
