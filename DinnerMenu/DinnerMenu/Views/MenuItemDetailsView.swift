@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuItemDetailsView: View {
+    
     @State private var price: Int = 10
     @State private var orderQuantity: Int = 1000
     @State private var ingredients = ["spinach",

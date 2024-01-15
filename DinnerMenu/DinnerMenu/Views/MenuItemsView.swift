@@ -10,13 +10,9 @@ import SwiftUI
 
 struct MenuItemsView: View {
     
-    @StateObject var menuViewModel = MenuViewModel(
-        foodMenuItems: MenuItem.testFoodMenuItems,
-        drinkMenuItems: MenuItem.testMenuItemsDrink,
-        dessertMenuItems: MenuItem.testMenuItemsDessert)
+    @StateObject private var menuViewModel = MenuViewModel(foodMenuItems: [], drinkMenuItems: [], dessertMenuItems: [])
     
     @State var isPresenting = false
-    
     
     let columns: [GridItem] = [
         GridItem(.flexible(),
@@ -40,7 +36,7 @@ struct MenuItemsView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     ) {
-                        ForEach(menuViewModel.foodMenuItems) { item in
+                        ForEach($menuViewModel.foodMenuItems) { item in
                             NavigationLink {
                                 MenuItemDetailsView()
                             } label: {

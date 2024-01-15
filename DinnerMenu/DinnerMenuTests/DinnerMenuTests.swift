@@ -11,7 +11,9 @@ import XCTest
 final class DinnerMenuTests: XCTestCase {
 
     func test_menuItemTitle_equalToInitializedValue() {
-        
+        let title = "Spaghetti"
+        let menuItem = MenuItem(title: title, price: 0, category: .food, orderCount: 0, ingredients: [])
+        XCTAssertEqual(menuItem.title, title)
     }
 
 }

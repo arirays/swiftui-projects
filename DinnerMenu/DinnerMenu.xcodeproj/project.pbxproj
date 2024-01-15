@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4D79062B534C8500C98187 /* SortFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79052B534C8500C98187 /* SortFeature.swift */; };
 		0BDC67AD2B4763B30009FC69 /* DinnerMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC67AC2B4763B30009FC69 /* DinnerMenuApp.swift */; };
 		0BDC67AF2B4763B30009FC69 /* MenuItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC67AE2B4763B30009FC69 /* MenuItemsView.swift */; };
 		0BDC67B12B4763B50009FC69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC67B02B4763B50009FC69 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4D79052B534C8500C98187 /* SortFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFeature.swift; sourceTree = "<group>"; };
 		0BDC67A92B4763B30009FC69 /* DinnerMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinnerMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC67AC2B4763B30009FC69 /* DinnerMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerMenuApp.swift; sourceTree = "<group>"; };
 		0BDC67AE2B4763B30009FC69 /* MenuItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0BDC67C02B48BBBB0009FC69 /* Ingredient.swift */,
 				0BDC67BE2B48BACB0009FC69 /* MenuCategory.swift */,
 				0BDC67C22B48BE210009FC69 /* MenuItem.swift */,
+				0B4D79052B534C8500C98187 /* SortFeature.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				0BDC67AF2B4763B30009FC69 /* MenuItemsView.swift in Sources */,
 				0BDC67BB2B4763E10009FC69 /* MenuItemDetailsView.swift in Sources */,
 				0BDC67C12B48BBBB0009FC69 /* Ingredient.swift in Sources */,
+				0B4D79062B534C8500C98187 /* SortFeature.swift in Sources */,
 				0BDC67AD2B4763B30009FC69 /* DinnerMenuApp.swift in Sources */,
 				0BDC67BD2B4764210009FC69 /* MenuItemsOptionView.swift in Sources */,
 				0BDC67BF2B48BACB0009FC69 /* MenuCategory.swift in Sources */,
