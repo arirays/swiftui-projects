@@ -11,9 +11,8 @@ guard let menuURL = menuURL else {
 let request = URLRequest(url: menuURL)
 let task = URLSession.shared.dataTask(with: menuURL)
 { data, response, error in
-    if let data = data {
-        let responseString = String(data: data, encoding: .utf8)
-        print(responseString ?? "https://www.google.com")
+    if let data = data, let responseString = String(data: data, encoding: .utf8) {
+        print(responseString)
     }
 }
 
