@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 func getAppetizers() async throws -> [Appetizer] {
     guard let url = URL(string: appetizerURL) else {
         throw APError.invalidURL
@@ -31,3 +32,4 @@ URL = https://api.edamam.com/api/recipes/v2?type=public&app_id=d1ed5062&app_key=
 // fetch
 getRequest()
 parseJSON()
+*/
