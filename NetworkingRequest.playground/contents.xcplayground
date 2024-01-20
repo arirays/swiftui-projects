@@ -3,5 +3,6 @@
     <pages>
         <page name='HTTP_request_example'/>
         <page name='HTTP_request'/>
+        <page name='Working_with_JSON'/>
     </pages>
 </playground>
