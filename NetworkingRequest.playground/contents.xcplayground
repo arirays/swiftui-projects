@@ -4,5 +4,6 @@
         <page name='HTTP_request_example'/>
         <page name='HTTP_request'/>
         <page name='Working_with_JSON'/>
+        <page name='ParsingJSON_exercise'/>
     </pages>
 </playground>
