@@ -2,12 +2,10 @@
 //  AppetizersListView.swift
 //  Appetizers
 //
-//  Created by AS on 1/15/24.
-//
 
 import SwiftUI
 
-struct AppetizersListView: View {
+struct AppetizerListView: View {
     
     
     var body: some View {
@@ -33,5 +31,5 @@ struct AppetizersListView: View {
 }
 
 #Preview {
-    AppetizersListView()
+    AppetizerListView()
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct AppetizersApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppetizerTabView()
         }
     }
 }
