@@ -26,6 +26,7 @@ struct AppetizerListView: View {
                     }
                 }
             }
+            .navigationTitle("Appetizers")
         }
     }
 }

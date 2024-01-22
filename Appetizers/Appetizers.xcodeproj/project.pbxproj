@@ -15,6 +15,7 @@
 		0B4D790A2B56406000C98187 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79092B56406000C98187 /* AppetizerListView.swift */; };
 		0B4D79122B5E08E300C98187 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79112B5E08E300C98187 /* AccountView.swift */; };
 		0B4D79142B5E08F400C98187 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79132B5E08F400C98187 /* OrderView.swift */; };
+		0B4D79162B5F178F00C98187 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79152B5F178F00C98187 /* Appetizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0B4D79092B56406000C98187 /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
 		0B4D79112B5E08E300C98187 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		0B4D79132B5E08F400C98187 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		0B4D79152B5F178F00C98187 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				0B2B48FB2ACF4906001F8340 /* AppetizersApp.swift */,
+				0B4D79172B5F1EAB00C98187 /* Model */,
 				0B4D79082B56402F00C98187 /* Views */,
 				0B2B48FF2ACF4907001F8340 /* Assets.xcassets */,
 				0B2B49012ACF4907001F8340 /* Preview Content */,
@@ -85,6 +88,14 @@
 				0B2B48FD2ACF4906001F8340 /* AppetizerTabView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0B4D79172B5F1EAB00C98187 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B4D79152B5F178F00C98187 /* Appetizer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				0B4D790A2B56406000C98187 /* AppetizerListView.swift in Sources */,
 				0B2B48FE2ACF4906001F8340 /* AppetizerTabView.swift in Sources */,
 				0B4D79142B5E08F400C98187 /* OrderView.swift in Sources */,
+				0B4D79162B5F178F00C98187 /* Appetizer.swift in Sources */,
 				0B2B48FC2ACF4906001F8340 /* AppetizersApp.swift in Sources */,
 				0B4D79122B5E08E300C98187 /* AccountView.swift in Sources */,
 			);
