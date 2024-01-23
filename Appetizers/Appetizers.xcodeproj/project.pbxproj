@@ -66,7 +66,6 @@
 				0B4D79082B56402F00C98187 /* Views */,
 				0B2B48FF2ACF4907001F8340 /* Assets.xcassets */,
 				0B2B49012ACF4907001F8340 /* Preview Content */,
-				0B2B495F2AD39ADE001F8340 /* NetworkManager.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -86,6 +85,7 @@
 				0B4D79112B5E08E300C98187 /* AccountView.swift */,
 				0B4D79132B5E08F400C98187 /* OrderView.swift */,
 				0B2B48FD2ACF4906001F8340 /* AppetizerTabView.swift */,
+				0B2B495F2AD39ADE001F8340 /* NetworkManager.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
