@@ -6,11 +6,11 @@
 import SwiftUI
 
 struct AppetizerListView: View {
-    
+    @StateObject var viewModel = AppetizerViewModel()
     
     var body: some View {
         NavigationStack {
-            List(MockData.appetizers) { appetizer in
+            List(viewModel.appetizers) { appetizer in
                     HStack {
                         Image("asian-flank-steak")
                             .resizable()
@@ -30,6 +30,9 @@ struct AppetizerListView: View {
                     }
             }
             .navigationTitle("Appetizers")
+        }
+        .onAppear {
+            viewModel.getAppetizers()
         }
     }
 }
