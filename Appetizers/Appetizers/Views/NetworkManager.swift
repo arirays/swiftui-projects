@@ -52,6 +52,11 @@ final class NetworkManager {
         
     }
     
+    
+    func downloadImage(fromURLString: String, completed: @escaping) {
+        
+    }
+    
 }
 
 
