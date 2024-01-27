@@ -12,8 +12,7 @@ struct AppetizerListView: View {
         NavigationStack {
             List(viewModel.appetizers) { appetizer in
                     HStack {
-                        Image("asian-flank-steak")
-                            .resizable()
+                        AppetizerRemoteImage(urlString: appetizer.imageURL)
                             .scaledToFit()
                             .frame(width: 120, height: 90)
                             .clipShape(.rect(cornerRadius: 8))
