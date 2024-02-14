@@ -14,8 +14,7 @@ struct AppetizerDetailView: View {
 
     var body: some View {
         VStack {
-            Image("asian-flank-steak")
-                .resizable()
+            AppetizerRemoteImage(urlString: appetizer.imageURL)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 320, height: 225)
             VStack {
@@ -28,33 +27,9 @@ struct AppetizerDetailView: View {
                     .padding()
                 
                 HStack(spacing: 40) {
-                    VStack(spacing: 5) {
-                        Text("Calories")
-                            .bold()
-                            .font(.caption)
-                        Text("\(appetizer.calories)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
-                    VStack(spacing: 5) {
-                        Text("Carbs")
-                            .bold()
-                            .font(.caption)
-                        Text("\(appetizer.carbs)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
-                    VStack(spacing: 5) {
-                        Text("Protein")
-                            .bold()
-                            .font(.caption)
-                        Text("\(appetizer.protein)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
+                    NutritionInfo(title: "Protein", value: appetizer.protein)
+                    NutritionInfo(title: "Carbs", value: appetizer.carbs)
+                    NutritionInfo(title: "Calories", value: appetizer.calories)
                 }
             }
             Spacer()
@@ -78,16 +53,7 @@ struct AppetizerDetailView: View {
         .overlay(Button(action: {
             isShowingDetail = false
         }, label: {
-            ZStack {
-                Circle()
-                    .frame(width: 30)
-                    .foregroundStyle(.white)
-                    .opacity(0.6)
-                Image(systemName: "xmark")
-                    .imageScale(.small)
-                    .frame(width: 44, height: 44)
-                    .foregroundStyle(Color(.brandPrimary))
-            }
+            XDismissButton()
         }), alignment: .topTrailing)
     }
 }
@@ -95,4 +61,22 @@ struct AppetizerDetailView: View {
 #Preview {
     AppetizerDetailView(appetizer: MockData.sampleAppetizer,
         isShowingDetail: .constant(true))
+}
+
+
+struct NutritionInfo: View {
+    let title: String
+    let value: Int
+    
+    var body: some View {
+        VStack(spacing: 5) {
+            Text(title)
+                .bold()
+                .font(.caption)
+            Text("\(value)")
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
+                .italic()
+        }
+    }
 }
