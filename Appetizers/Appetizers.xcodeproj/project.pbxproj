@@ -23,6 +23,7 @@
 		0B4D79282B7D81CD00C98187 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79272B7D81CD00C98187 /* XDismissButton.swift */; };
 		0B4D79362BAA678300C98187 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79352BAA678300C98187 /* AccountViewModel.swift */; };
 		0B4D79382BAA697B00C98187 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79372BAA697B00C98187 /* StringExt.swift */; };
+		0B4D793A2BABA88700C98187 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D79392BABA88700C98187 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		0B4D79272B7D81CD00C98187 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		0B4D79352BAA678300C98187 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		0B4D79372BAA697B00C98187 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		0B4D79392BABA88700C98187 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4D79152B5F178F00C98187 /* Appetizer.swift */,
+				0B4D79392BABA88700C98187 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				0B4D79192B607E9000C98187 /* AppetizerViewModel.swift in Sources */,
 				0B4D79142B5E08F400C98187 /* OrderView.swift in Sources */,
 				0B4D79162B5F178F00C98187 /* Appetizer.swift in Sources */,
+				0B4D793A2BABA88700C98187 /* User.swift in Sources */,
 				0B2B48FC2ACF4906001F8340 /* AppetizersApp.swift in Sources */,
 				0B4D79262B75A3B000C98187 /* AppetizerDetailView.swift in Sources */,
 				0B4D79382BAA697B00C98187 /* StringExt.swift in Sources */,
