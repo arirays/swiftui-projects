@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0DC98C2BB4F3F10056CA37 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DC98B2BB4F3F10056CA37 /* Order.swift */; };
 		0B2B48FC2ACF4906001F8340 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B48FB2ACF4906001F8340 /* AppetizersApp.swift */; };
 		0B2B48FE2ACF4906001F8340 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B48FD2ACF4906001F8340 /* AppetizerTabView.swift */; };
 		0B2B49002ACF4907001F8340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B48FF2ACF4907001F8340 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0DC98B2BB4F3F10056CA37 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0B2B48F82ACF4906001F8340 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2B48FB2ACF4906001F8340 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
 		0B2B48FD2ACF4906001F8340 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				0B4D79152B5F178F00C98187 /* Appetizer.swift */,
 				0B4D79392BABA88700C98187 /* User.swift */,
+				0B0DC98B2BB4F3F10056CA37 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				0B4D79222B64917000C98187 /* RemoteImage.swift in Sources */,
 				0B2B48FE2ACF4906001F8340 /* AppetizerTabView.swift in Sources */,
 				0B4D79192B607E9000C98187 /* AppetizerViewModel.swift in Sources */,
+				0B0DC98C2BB4F3F10056CA37 /* Order.swift in Sources */,
 				0B4D79142B5E08F400C98187 /* OrderView.swift in Sources */,
 				0B4D79162B5F178F00C98187 /* Appetizer.swift in Sources */,
 				0B4D793A2BABA88700C98187 /* User.swift in Sources */,
