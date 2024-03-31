@@ -8,11 +8,16 @@
 import Foundation
 import SwiftUI
 
-final class AppetizerViewModel: ObservableObject {
+//Anything that happens on this ViewModel is UI related will be rerouted into MAIN thread.
+@MainActor final class AppetizerViewModel: ObservableObject {
+    
     @Published var appetizers: [Appetizer] = []
     @Published var alertItem: AlertItem?
+    @Published var isShowingDetail = false
+    @Published var selectedAppetizer: Appetizer?
     
-    func getAppetizers() {
+//    OLD WAY.
+/*    func getAppetizers() {
         NetworkManager.shared.getAppetizers { result in
             DispatchQueue.main.async {
                 switch result {
@@ -32,5 +37,18 @@ final class AppetizerViewModel: ObservableObject {
                 }
             }
         }
+    }
+ */
+    
+//    NEW WAY.
+    func getAppetizers()  {
+        Task {
+            do {
+                appetizers = try await NetworkManager.shared.getAppetizers()
+            } catch {
+                alertItem = AlertContext.invalidResponse
+            }
+        }
+        
     }
 }

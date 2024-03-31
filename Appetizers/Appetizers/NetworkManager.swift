@@ -17,7 +17,25 @@ final class NetworkManager {
     
     private init() { }
     
-    func getAppetizers(completed: @escaping (Result<[Appetizer], APError>) -> Void) {
+//    NEW METHOD. Using Async Await network request
+    func getAppetizers() async throws -> [Appetizer] {
+        guard let url = URL(string: appetizerURL) else {
+            throw APError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        do {
+            let decoder = JSONDecoder()
+            let decodedResponse = try decoder.decode(AppetizerResponse.self, from: data)
+            return decodedResponse.request
+        } catch {
+            throw APError.invalidData
+        }
+    }
+    
+//    OLD METHOD. Completion handler case.
+    /* func getAppetizers(completed: @escaping (Result<[Appetizer], APError>) -> Void) {
         guard let url = URL(string: appetizerURL) else {
             completed(.failure(.invalidURL))
             return
@@ -48,12 +66,9 @@ final class NetworkManager {
                 completed(.failure(.invalidData))
             }
         }
-        
-        
         task.resume()
-        
     }
-    
+    */
     
     func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
